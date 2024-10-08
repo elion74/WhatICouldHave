@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import './App.css'
 import SearchBar from "./Searchbar.tsx"
+import Datepicker from "./Datepicker.tsx"
 
 import {getToday, getFirstDate, getSecondDate} from "./services/stockservice.ts"
 
@@ -21,6 +22,8 @@ function App() {
     
 
     <SearchBar />
+
+    <Datepicker />
   
 
   </>
