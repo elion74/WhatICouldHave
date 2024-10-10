@@ -11,14 +11,18 @@ export default function Datepicker () {
       <DatePicker
           format="YYYY-MM-DD"
 
-          placeholder="start"
+          placeholder="Start"
         
           style = {{width:"100px"}}
-          popupStyle={{width:"100px"}}
+          popupStyle={{ 
+            position: "absolute",
+            left : "50%",
+            transform: "translateX(-50%)"}}
           allowClear= {false}
-           picker="year"
+          mode = "year"
         />   
        
+   
         <DatePicker
           format="YYYY-MM-DD"
 
@@ -30,7 +34,7 @@ export default function Datepicker () {
             left: "50%",
             transform: "translateX(-50%)"}}
           allowClear= {false}
-          picker="year"
+          mode="year"
         />   
       </div>
 
