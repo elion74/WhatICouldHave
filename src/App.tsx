@@ -1,9 +1,16 @@
-import { useEffect } from 'react'
+import { useEffect} from 'react'
 import './App.css'
 import SearchBar from "./Searchbar.tsx"
 import Datepicker from "./Datepicker.tsx"
+import StockChart from './StockChart.tsx';
+import Chart from "./Chart.tsx"
+import LineChart from "./LineChart.tsx"
+
+
 
 //import {getToday, getFirstDate, getSecondDate} from "./services/stockservice.ts"
+
+
 
 function App() {
 
@@ -26,6 +33,13 @@ function App() {
 
 
     <Datepicker />
+
+
+    <StockChart />
+
+    <Chart />
+
+    <LineChart />
   
   </>
     )

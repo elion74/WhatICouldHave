@@ -1,7 +1,5 @@
 import React from 'react';
-import { DatePicker, Space } from 'antd';
-
-const { RangePicker } = DatePicker;
+import { DatePicker } from 'antd';
 
 
 export default function Datepicker () {
