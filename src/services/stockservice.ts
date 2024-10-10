@@ -2,7 +2,7 @@
 
     const getToday  = async() => {
 
-        const urlToday = `https://www.alphavantage.co/query?function=HISTORICAL_OPTIONS&symbol=IBM&apikey=${process.env.API_KEY}`
+       const urlToday = `https://www.alphavantage.co/query?function=HISTORICAL_OPTIONS&symbol=IBM&apikey=${process.env.API_KEY}`
    
         try {
 
@@ -37,7 +37,7 @@
 
     const getSecondDate  = async(seconddate:string) => {
 
-        const urlSecondDate = `https://www.alphavantage.co/query?function=HISTORICAL_OPTIONS&symbol=IBM&date=${seconddate}&apikey=${process.env.API_KEY}`;
+       const urlSecondDate = `https://www.alphavantage.co/query?function=HISTORICAL_OPTIONS&symbol=IBM&date=${seconddate}&apikey=${process.env.API_KEY}`;
  
 
         try {

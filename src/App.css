@@ -1,19 +1,5 @@
 
-*{
 
-  margin: 0;
-  padding:0;
-  box-sizing: border-box;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  
-  
-  background-color:#1a1a1a;
-  color:#dddddd;
-  
-  
-  
-  }
- 
 
 
   .heading{
@@ -21,3 +7,19 @@
     margin-top: 50px;
 
   }
+
+
+  html{
+
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    
+    background-color: #252525;
+    color:#dddddd;
+    
+    
+    }
+   

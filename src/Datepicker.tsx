@@ -1,26 +1,39 @@
-import * as React from 'react';
-import MuiTextField, { TextFieldProps } from '@mui/material/TextField';
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DateField } from '@mui/x-date-pickers/DateField';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import React from 'react';
+import { DatePicker, Space } from 'antd';
+
+const { RangePicker } = DatePicker;
+
+
 export default function Datepicker () {
 
-    const TextField = React.forwardRef(
-        (props: TextFieldProps, ref: React.Ref<HTMLDivElement>) => (
-          <MuiTextField {...props} ref={ref} size="small" />
-        ),
-    );
+    return(
+    <div style = {{width:"200px", margin:"auto", marginTop:"30px"}}>
+      <DatePicker
+          format="YYYY-MM-DD"
 
-return(
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-    <DemoContainer components={['DateField', 'DatePicker']}>
-        <DatePicker 
-            slots={{ textField: TextField }}
-        />
-    </DemoContainer>
-</LocalizationProvider>
-)
+          placeholder="start"
+        
+          style = {{width:"100px"}}
+          popupStyle={{width:"100px"}}
+          allowClear= {false}
+           picker="year"
+        />   
+       
+        <DatePicker
+          format="YYYY-MM-DD"
+
+          placeholder="End"
+        
+          style = {{width:"100px"}}
+          popupStyle={{ 
+            position: "absolute",
+            left: "50%",
+            transform: "translateX(-50%)"}}
+          allowClear= {false}
+          picker="year"
+        />   
+      </div>
+
+    )
 
 }
