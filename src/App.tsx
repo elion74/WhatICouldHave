@@ -2,8 +2,6 @@ import { useEffect} from 'react'
 import './App.css'
 import SearchBar from "./Searchbar.tsx"
 import Datepicker from "./Datepicker.tsx"
-import StockChart from './StockChart.tsx';
-import Chart from "./Chart.tsx"
 import LineChart from "./LineChart.tsx"
 
 
@@ -34,12 +32,9 @@ function App() {
 
     <Datepicker />
 
-
-    <StockChart />
-
-    <Chart />
-
     <LineChart />
+
+
   
   </>
     )
