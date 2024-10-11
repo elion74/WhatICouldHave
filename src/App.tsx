@@ -3,6 +3,7 @@ import './App.css'
 import SearchBar from "./Searchbar.tsx"
 import Datepicker from "./Datepicker.tsx"
 import LineChart from "./LineChart.tsx"
+import Results from "./Results.tsx"
 
 
 
@@ -34,7 +35,9 @@ function App() {
 
     <LineChart />
 
+    <Results />
 
+    
   
   </>
     )
