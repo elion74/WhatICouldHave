@@ -20,7 +20,7 @@ function Searchbar() {
           disableClearable={true}
         />
     
-        <Button  size="sm" sx = {{width: "20px", backgroundColor:"#1a1a1a"}}>
+        <Button  size="sm" sx = {{width: "30px", backgroundColor:"#1a1a1a", marginLeft:"10px"}}>
             <SearchIcon  sx =  {{backgroundColor:"#1a1a1a"}}/>
         </Button>
 

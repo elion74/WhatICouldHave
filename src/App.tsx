@@ -1,17 +1,22 @@
-import { useEffect } from 'react'
+import { useEffect} from 'react'
 import './App.css'
 import SearchBar from "./Searchbar.tsx"
 import Datepicker from "./Datepicker.tsx"
+import LineChart from "./LineChart.tsx"
 
-import {getToday, getFirstDate, getSecondDate} from "./services/stockservice.ts"
+
+
+//import {getToday, getFirstDate, getSecondDate} from "./services/stockservice.ts"
+
+
 
 function App() {
 
   useEffect(() => {
 
-    getToday();
-    getFirstDate("2017-11-15");
-    getSecondDate("2017-11-15");
+    //  getToday();
+ // getFirstDate("2017-11-15");
+    //getSecondDate("2017-11-15");
 
   });
 
@@ -23,9 +28,14 @@ function App() {
 
     <SearchBar />
 
-    <Datepicker />
-  
 
+
+    <Datepicker />
+
+    <LineChart />
+
+
+  
   </>
     )
 }
