@@ -60,15 +60,13 @@ const [stockOptions, setStockOptions] = useState({
     scales: {
         x: {
             title: {
-                display: true,
-                text: 'Date'
+                display: false
             }
         },
         y: {
             beginAtZero: false,
             title: {
-                display: true,
-                text: 'Price (USD)'
+                display: false
             }
         }
     }
