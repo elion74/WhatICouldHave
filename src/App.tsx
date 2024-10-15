@@ -1,4 +1,4 @@
-import { useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import './App.css'
 import SearchBar from "./Searchbar.tsx"
 import Datepicker from "./Datepicker.tsx"
@@ -7,26 +7,25 @@ import Results from "./Results.tsx"
 
 
 
-import {getToday, getFirstDate, getSecondDate} from "./services/stockservice.ts"
+import {getToday} from "./services/stockservice.ts"
 
 
 
 function App() {
 
   const [stockdata, setStockData] = useState([]);
+  
+  const [stockname, setStockName] = useState<string>("");
 
-  const handleDataFromChild = () => {
+  const handleDataFromChild = (data:any) => {
 
-console.log("jaööp")
+    setStockName(data);
 
   }
 
+  useEffect(() => {
 
-  useEffect(( ) => {
-
-  //  getToday(setStockData);
-
-
+    getToday(setStockData);
 
   }, []);
 

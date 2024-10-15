@@ -7,8 +7,10 @@ ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Title, T
 
 
 
-export default function LineChartExample() {
+export default function LineChartExample({dataset}:any) {
    // Mocked stock price data
+
+   //so ordnen
    const stockPrices = [
     { date: "2023-10-01", price: 145 },
     { date: "2023-10-02", price: 148 },

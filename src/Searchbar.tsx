@@ -11,7 +11,7 @@ function Searchbar({sendDataToParent}:any) {
 
     const handleSearch = async (event: any, value: string | null) => {
       if (!value) return;
-  
+    
       try {
         const response = await fetch(
           `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${value}&apikey=${process.env.REACT_APP_API_KEY}`
@@ -57,7 +57,7 @@ function Searchbar({sendDataToParent}:any) {
     
       <Button  size="sm" sx = {{width: "30px", backgroundColor:"#1a1a1a", marginLeft:"10px"}} onClick={() =>{console.log(name)} }>
             <SearchIcon  sx =  {{backgroundColor:"#1a1a1a"}}/>
-        </Button>
+      </Button>
 
     </Box>
   )

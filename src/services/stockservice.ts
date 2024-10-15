@@ -2,7 +2,7 @@
 
     const getToday  = async(setStockData:any) => {
 
-       const urlToday = `https://www.alphavantage.co/query?function=HISTORICAL_OPTIONS&symbol=IBM&apikey=${process.env.API_KEY}`
+       const urlToday = `https://www.alphavantage.co/query?function=HISTORICAL_OPTIONS&symbol=IBM&apikey=${process.env.REACT_APP_API_KEY}`
    
         try {
 
@@ -18,44 +18,4 @@
         }
     }
 
-    const getFirstDate  = async (firstdate:string) => {
-        
-        const urlFirstDate= `https://www.alphavantage.co/query?function=HISTORICAL_OPTIONS&symbol=IBM&date=${firstdate}&apikey=${process.env.API_KEY}`;
-    
-
-        try {
-
-            const response = await fetch(urlFirstDate);
-
-            const data = await  response.json();
-            console.log(data)
-
-
-        }catch(e){
-            console.log("fehler"+e)
-        }
-    }
-
-    const getSecondDate  = async(seconddate:string) => {
-
-       const urlSecondDate = `https://www.alphavantage.co/query?function=HISTORICAL_OPTIONS&symbol=IBM&date=${seconddate}&apikey=${process.env.API_KEY}`;
- 
-
-        try {
-
-            const response = await fetch(urlSecondDate);
-
-            const data = await  response.json();
-            console.log(data)
-
-
-        }catch(e){
-            console.log("fehler"+e)
-        }
-    }
-
-
-
-
-
-    export {getToday, getFirstDate, getSecondDate}
+    export {getToday}
