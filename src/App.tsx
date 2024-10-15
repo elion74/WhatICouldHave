@@ -1,4 +1,4 @@
-import { useEffect} from 'react'
+import { useEffect, useState} from 'react'
 import './App.css'
 import SearchBar from "./Searchbar.tsx"
 import Datepicker from "./Datepicker.tsx"
@@ -7,28 +7,35 @@ import Results from "./Results.tsx"
 
 
 
-//import {getToday, getFirstDate, getSecondDate} from "./services/stockservice.ts"
+import {getToday, getFirstDate, getSecondDate} from "./services/stockservice.ts"
 
 
 
 function App() {
 
-  useEffect(() => {
+  const [stockdata, setStockData] = useState([]);
 
-    //  getToday();
- // getFirstDate("2017-11-15");
-    //getSecondDate("2017-11-15");
+  const handleDataFromChild = () => {
 
-  });
+console.log("jaööp")
 
+  }
+
+
+  useEffect(( ) => {
+
+  //  getToday(setStockData);
+
+
+
+  }, []);
 
   return ( 
   <>
     <h1 className="heading">What I could Have when i invested x in X ?</h1>
     
 
-    <SearchBar />
-
+    <SearchBar  sendDataToParent = {handleDataFromChild}/>
 
 
     <Datepicker />

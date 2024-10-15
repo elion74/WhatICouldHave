@@ -1,6 +1,6 @@
     //Date format 2017-11-15
 
-    const getToday  = async() => {
+    const getToday  = async(setStockData:any) => {
 
        const urlToday = `https://www.alphavantage.co/query?function=HISTORICAL_OPTIONS&symbol=IBM&apikey=${process.env.API_KEY}`
    
@@ -10,6 +10,7 @@
 
             const data = await  response.json();
             console.log(data)
+            setStockData(data);
 
 
         }catch(e){
