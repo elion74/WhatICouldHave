@@ -14,7 +14,7 @@ function Searchbar({sendDataToParent}:any) {
     
       try {
         const response = await fetch(
-          `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${value}&apikey=${process.env.REACT_APP_API_KEY}`
+          `https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=SYMBOL_LIST&apikey=${process.env.REACT_APP_API_KEY}`
         );
         const data = await response.json();
   

@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import {SetStateAction, useEffect, useState} from 'react'
 import './App.css'
 import SearchBar from "./Searchbar.tsx"
 import Datepicker from "./Datepicker.tsx"
@@ -15,19 +15,32 @@ function App() {
 
   const [stockdata, setStockData] = useState([]);
   
-  const [stockname, setStockName] = useState<string>("");
+  const [stockName, setStockName] = useState<string>("");
+
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleDataFromChild = (data:any) => {
 
     setStockName(data);
 
+    console.log(data)
+
   }
-
-  useEffect(() => {
-
-    getToday(setStockData);
-
-  }, []);
+ // Fetch stock data whenever the stockName changes
+ useEffect(() => {
+  if (stockName) {
+    setLoading(true);
+    getToday(stockName)
+      .then((result: SetStateAction<never[]>) => {
+        setStockData(result);
+        setLoading(false);
+      })
+      .catch((error: any) => {
+        console.error('Error fetching stock data:', error);
+        setLoading(false);
+      });
+  }
+}, [stockName]);
 
   return ( 
   <>
@@ -39,7 +52,8 @@ function App() {
 
     <Datepicker />
 
-    <LineChart />
+       {/* Display the LineChart with fetched stock data */}
+       {!loading && stockdata.length > 0 && <LineChart dataset={stockdata} />}
 
     <Results />
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend } from 'chart.js';
 
@@ -7,30 +7,20 @@ ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Title, T
 
 
 
-export default function LineChartExample({dataset}:any) {
-   // Mocked stock price data
+export default function LineChart({dataset}:any) {
+ 
+     // Transform the dataset into labels and data for the chart
+  const labels = dataset.map((data: any) => data.date);
+  const prices = dataset.map((data: any) => data.price);
 
-   //so ordnen
-   const stockPrices = [
-    { date: "2023-10-01", price: 145 },
-    { date: "2023-10-02", price: 148 },
-    { date: "2023-10-03", price: 143 },
-    { date: "2023-10-04", price: 150 },
-    { date: "2023-10-05", price: 155 },
-    { date: "2023-10-06", price: 160 },
-    { date: "2023-10-07", price: 162 },
-    { date: "2023-10-08", price: 158 },
-    { date: "2023-10-09", price: 164 },
-    { date: "2023-10-10", price: 170 }
-];
 
 // Set data for the chart
 const [stockData, setStockData] = useState({
-    labels: stockPrices.map(data => data.date), // X-axis (dates)
+    labels: labels, // X-axis (dates)
     datasets: [
         {
             label: 'Stock Price ($)',
-            data: stockPrices.map(data => data.price), // Y-axis (prices)
+            data: prices, // Y-axis (prices)
             fill: false,
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
             borderColor: 'rgba(54, 162, 235, 1)',
@@ -73,6 +63,27 @@ const [stockOptions, setStockOptions] = useState({
         }
     }
 });
+
+
+useEffect(() => {
+    setStockData({
+      labels: dataset.map((data: any) => data.date),
+      datasets: [
+        {
+          label: 'Stock Price ($)',
+          data: dataset.map((data: any) => data.price),
+          fill: false,
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 2,
+          pointRadius: 3,
+          pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+          tension: 0.1,
+        },
+      ],
+    });
+  }, [dataset]);
+
 
 // Render the chart
 return (
